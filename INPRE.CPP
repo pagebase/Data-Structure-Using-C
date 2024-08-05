@@ -1,3 +1,7 @@
+//Title: Infix expression to Prefix expression
+//Courtesy: Mr. Jibrail Bagwan
+//Date: 5 Aug 2024
+
 #include<stdio.h>
 #include<string.h>
 #include<conio.h>
