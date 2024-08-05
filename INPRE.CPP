@@ -29,7 +29,7 @@ void  main()
     strrev(in);
     while(in[i]!='\0')
     {
-       if(in[i]==')'||in[i]=='+'||in[i]=='-'||in[i]=='*'||in[i]=='/'||in[i]=='^'||in[i]=='$')
+       if(in[i]==')'||in[i]=='+'||in[i]=='-'||in[i]=='*'||in[i]=='/'||in[i]=='^'||in[i]=='$' || in[i]==='@' || in[i]=='#' || in[i]=='&')
        {
 	   push(ops,in[i]);
        }
