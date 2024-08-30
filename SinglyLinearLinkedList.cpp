@@ -1,4 +1,4 @@
-//Title: Singly Linked List
+//Title: Singly Linear Linked List
 //Date: 30 Aug 2024
 #include<stdio.h>
 #include<conio.h>
