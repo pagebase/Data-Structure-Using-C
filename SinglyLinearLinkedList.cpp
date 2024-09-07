@@ -151,7 +151,7 @@ void insBet(int after, int x)
 {
     node *p,*q;
     p=list;
-    if(p==NULL)
+    if(p==NULL || p->next==NULL)
     {
 	printf("\nInsert between not possible\n");
     }
@@ -161,11 +161,12 @@ void insBet(int after, int x)
 	{
 	    if(p->info==after)
 	    {
-		q=create();
-		q->info=x;
-		q->next=p->next;
-		p->next=q;
+		    q=create();
+		    q->info=x;
+		    q->next=p->next;
+		    p->next=q;
 	    }
+        p=p->next;
 	}
     }
 }
@@ -214,6 +215,7 @@ int remEnd()
 	temp=p->next;
 	z=temp->info;
 	p->next=NULL;
+    free(temp);
 	return z;
     }
 }
