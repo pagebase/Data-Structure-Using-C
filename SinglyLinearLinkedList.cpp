@@ -215,7 +215,7 @@ int remEnd()
 	temp=p->next;
 	z=temp->info;
 	p->next=NULL;
-    free(temp);
+    	free(temp);
 	return z;
     }
 }
