@@ -1,6 +1,5 @@
 //Title: Infix to Postfix using stack
 //Date: 24 Aug 2024
-//Credit: Rakesh Swami
 #include<stdio.h>
 #include<conio.h>
 #define max 50
