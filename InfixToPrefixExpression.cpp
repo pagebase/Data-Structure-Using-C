@@ -1,6 +1,5 @@
 //Title: Infix to Prefix expression using stack
 //Date: 24 Aug 2024
-//Courtesy: Rakesh Swami
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
