@@ -1,6 +1,5 @@
 //Title: Doubly Linear Linked List
 //Date: 9 Sep 2024
-//Courtesy: Rakesh Swami
 #include<stdio.h>
 #include<conio.h>
 #include<process.h>
