@@ -304,7 +304,7 @@ void count()
     }
     printf("Total Node Is: %d",counter);
 }
-void reverse()
+void reverse()//Out of the mind function.
 {
     node *t1,*t2,*t3=NULL;
     t1=list;
