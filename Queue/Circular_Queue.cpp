@@ -53,7 +53,8 @@ void main()
                 insert(insVal);
                 break;
             case 5://remove
-                remove();
+                remVal=remove();
+                printf("Removed Value: %d",remVal);
                 break;
             case 6://display
                 display();
