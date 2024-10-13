@@ -3,7 +3,8 @@
 #include<stdio.h>
 #include<conio.h>
 #include<process.h>
-#include<alloc.h>
+//#include<alloc.h>
+#include<stdlib.h>//Latest malloc function header file
 //structure section. It is Global section.
 struct node
 {
@@ -24,10 +25,10 @@ void display();//Display data from each node.
 void search(int);//Search particular Node.
 void count();//Coount how many Node exists.
 //Main section
-void main()
+int main()
 {
     int choice,insVal,after,remVal,searchVal;
-    clrscr();
+    //clrscr();
     do
     {
 	    printf("\n1. Insert at Beginning\n");
@@ -92,9 +93,13 @@ void main()
                     break;
                 case 11:
                     exit(10);
+                default:
+                    printf("Oops! Invalid input");
+                    break;
         }
     }while(choice!=11);
-    getch();
+    //getch();
+    return 0;
 }//Main function end
 //Function definition section
 //create function
@@ -266,11 +271,11 @@ void search(int searchVal)
             break;
         }
         p=p->next;
-        if(found==1)
+    }
+    if(found==1)
             printf("Node found");
         else
             printf("Node not found");
-    }
 }
 //Count function
 void count()
