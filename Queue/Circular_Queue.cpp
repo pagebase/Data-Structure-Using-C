@@ -60,6 +60,7 @@ void main()
                 display();
                 break;
             case 7://exit
+                free(q);//Freed memory.
                 exit(0);
                 break;
         }
