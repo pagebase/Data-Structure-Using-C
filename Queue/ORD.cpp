@@ -1,3 +1,5 @@
+//Title: Output Restriction Dequeu(ORD).
+//Coded date: 14th Oct 2024
 #include<stdio.h>
 #include<stdlib.h>
 #define max 5
