@@ -29,6 +29,7 @@ int main()
 {
     int choice,insVal,after,remVal,searchVal;
     //clrscr();
+    printf("Doubly Linear Code");
     do
     {
 	    printf("\n1. Insert at Beginning\n");
@@ -267,15 +268,15 @@ void search(int searchVal)
     {
         if(p->info==searchVal)
         {
-            found=1;
-            break;
+            found++;
+            //break;
         }
         p=p->next;
     }
-    if(found==1)
-            printf("Node found");
-        else
-            printf("Node not found");
+    if(found>=2)
+        printf("[%d] times occured",found);
+    else
+        printf("[%d] times occured",found);
 }
 //Count function
 void count()
