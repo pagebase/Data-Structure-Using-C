@@ -279,9 +279,9 @@ void search(int searchVal)
         p=p->next;
     }
     if(found>=2)
-        printf("[%d] times occured",found);
+        printf("\n[%d] times occured",found);
     else
-        printf("[%d] times occured",found);
+        printf("\n[%d] times occured",found);
 }
 //Count function
 void count()
