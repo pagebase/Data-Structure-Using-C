@@ -1,9 +1,7 @@
 //Title: Singly Linear Linked List
 //Date: 30 Aug 2024
 #include<stdio.h>
-#include<conio.h>
-#include<alloc.h>
-#include<process.h>
+#include<stdlib.h>
 struct node
 {
     int info;
@@ -22,10 +20,9 @@ void search(int);// To check entered value exist in Node.
 void count();
 void reverse();//Reverse node last as first and first as last.
 //main function
-void main()
+int main()
 {
     int choice, insVal, after, remVal,srcVal;
-    clrscr();
     do
     {
 	printf("\n1.Insert Beginning\n");
@@ -39,6 +36,7 @@ void main()
 	printf("\n9.search\n");
 	printf("\n10.Count\n");
 	printf("\n11.Reverse\n");
+	printf("\n------------------------------\n");
 	printf("\nEnter Your Choice: ");
 	scanf("%d",&choice);
 	switch(choice)
@@ -78,7 +76,7 @@ void main()
 		display();
 		break;
 	    case 8:
-		exit(5);
+		exit(1);
 	    case 9:
 		printf("Enter Search Value: ");
 		scanf("%d",&srcVal);
@@ -92,7 +90,7 @@ void main()
 		break;
 	}
     }while(choice!=8);
-    getch();
+    return 0;
 }//main close
 //create function
 node* create()
@@ -250,11 +248,19 @@ void display()
 {
     node *p;
     p=list;
-    while(p!=NULL)
-    {
-	printf("\t%d",p->info);
-	p=p->next;
-    }
+	if(p==NULL)
+	{
+		printf("\nLinked list is empty!\n");
+	}
+	else
+	{
+		while(p!=NULL)
+    	{
+			printf("%d\t",p->info);
+			p=p->next;
+    	}
+	}
+    
 }
 //search function
 void search(int srcVal)
