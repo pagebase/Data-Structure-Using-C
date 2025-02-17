@@ -164,9 +164,9 @@ else
     {
            if(temp->right==NULL)
 	   {
-                 temp->right=p;
-	  	 printf("\nNode is inserted..."); 
-		 break;
+            temp->right=p;
+	  	    printf("\nNode is inserted..."); 
+		    break;
 	   }
            else
            {
@@ -182,7 +182,7 @@ void    preorder(node   *p)
  	if(p!=NULL)
         {    
             printf("\t%d",p->info);
-	    preorder(p->left);
+	        preorder(p->left);
             preorder(p->right);
         }
 }
@@ -192,7 +192,7 @@ void    inorder(node   *p)
  	if(p!=NULL)
         {    
             inorder(p->left);
-	    printf("\t%d",p->info); 	
+	        printf("\t%d",p->info); 	
             inorder(p->right);
         }
 }
@@ -204,6 +204,6 @@ void    postorder(node   *p)
         {    
             postorder(p->left);
             postorder(p->right);
-	    printf("\t%d",p->info);
+	        printf("\t%d",p->info);
         }
 }
