@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 // void moveValueToRightSideByOne(int arr[], int);
 void storeValueInArrayThroughRecursioin(int arr[], int, int);
@@ -6,10 +6,10 @@ void storeValueInArrayThroughRecursioin(int arr[], int, int);
 int main()
 {
     int arr[5];
-    int arraySize=5;
-    int index=0;
+    int arraySize = 5;
+    int index = 0;
     printf("Before: ");
-    for(int i=0; i<arraySize; i++)
+    for (int i = 0; i < arraySize; i++)
     {
         printf("Before: %d\t", arr[i]);
     }
@@ -20,10 +20,10 @@ int main()
 
 void storeValueInArrayThroughRecursioin(int arr[], int arraySize, int index)
 {
-    if(index==arraySize)
+    if (index == arraySize)
     {
         printf("After: ");
-        for(int i=0; i<arraySize; i++)
+        for (int i = 0; i < arraySize; i++)
         {
             printf("%d\t", arr[i]);
         }
@@ -31,8 +31,7 @@ void storeValueInArrayThroughRecursioin(int arr[], int arraySize, int index)
     }
     else
     {
-        arr[index]=index+1;//  1 2 3 4 5
-        storeValueInArrayThroughRecursioin(arr, arraySize, index+1);
-
+        arr[index] = index + 1; //  1 2 3 4 5
+        storeValueInArrayThroughRecursioin(arr, arraySize, index + 1);
     }
 }
