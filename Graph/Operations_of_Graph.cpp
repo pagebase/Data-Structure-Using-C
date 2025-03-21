@@ -4,10 +4,11 @@ void displayVertex();
 void insVertex();
 void searchVertex();
 void insEdge();
+void findAdjVertex();
 
 struct edge
 {
-    int p2;
+    int dest;
     edge *right;
 };
 
@@ -48,6 +49,9 @@ int main()
         case 4:
             insEdge();
             break;
+        case 5:
+            findAdjVertex();
+            break;
         case 7:
             exit(0);
         }
@@ -78,7 +82,7 @@ void insVertex()
             temp = temp->next;
         }
         temp->next = p;
-        printf("vertex has been set successfuly!\n");
+        printf("vertex has been adde successfuly!\n");
         printf("----------------------------------------------------------------------------------------------------\n");
     }
 }
@@ -155,7 +159,7 @@ void insEdge()
     if (count1 && count2)
     {
         e = (edge *)malloc(sizeof(edge));
-        e->p2 = destVertex;
+        e->dest = destVertex;
         e->right = NULL;
         if (p1->adj == NULL)
         {
@@ -178,6 +182,41 @@ void insEdge()
     else
     {
         printf("Invalid edge!\n");
+        printf("----------------------------------------------------------------------------------------------------\n");
+    }
+}
+void findAdjVertex()
+{
+    int srcVal;
+    bool found = false;
+    vertex *temp;
+    edge *travel;
+    temp = start;
+    printf("Enter vertex: ");
+    scanf("%d", &srcVal);
+    while (temp != NULL)
+    {
+        if (temp->data == srcVal)
+        {
+            found = true;
+            break;
+        }
+    }
+    if (found)
+    {
+        travel = temp->adj;
+        while (travel != NULL)
+        {
+            printf("%d\t", travel->dest);
+
+            travel = travel->right;
+        }
+        printf("\n");
+        printf("----------------------------------------------------------------------------------------------------\n");
+    }
+    else
+    {
+        printf("Vertex not found!\n");
         printf("----------------------------------------------------------------------------------------------------\n");
     }
 }
