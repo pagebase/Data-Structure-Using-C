@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 void displayVertex();
 void insVertex();
 void searchVertex();
@@ -111,23 +112,35 @@ void displayVertex()
 void searchVertex()
 {
     int srcVal;
+    bool found = false;
     vertex *temp;
-    temp = start;
     printf("Enter search value: ");
     scanf("%d", &srcVal);
-    while (temp != NULL)
+    if (start == NULL)
     {
-        if (temp->data == srcVal)
+        printf("Graph empty!\n");
+        printf("----------------------------------------------------------------------------------------------------\n");
+    }
+    else
+    {
+        temp = start;
+        while (temp != NULL)
         {
-            printf("Vertex found!\n");
+            if (temp->data == srcVal)
+            {
+                found = true;
+                break;
+            }
+        }
+        if (found)
+        {
+            printf("Vertex Found!\n");
             printf("----------------------------------------------------------------------------------------------------\n");
-            break;
         }
         else
         {
-            printf("Vertex doesn't exist\n");
+            printf("Vertex Not Found!");
             printf("----------------------------------------------------------------------------------------------------\n");
-            break;
         }
     }
 }
@@ -209,6 +222,7 @@ void findAdjVertex()
             found = true;
             break;
         }
+        temp = temp->next;
     }
     if (found)
     {
