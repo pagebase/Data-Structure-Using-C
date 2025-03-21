@@ -131,6 +131,7 @@ void searchVertex()
                 found = true;
                 break;
             }
+            temp = temp->next;
         }
         if (found)
         {
@@ -139,7 +140,7 @@ void searchVertex()
         }
         else
         {
-            printf("Vertex Not Found!");
+            printf("Vertex Not Found!\n");
             printf("----------------------------------------------------------------------------------------------------\n");
         }
     }
