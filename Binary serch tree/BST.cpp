@@ -3,6 +3,8 @@
 // #include<conio.h>
 // #include<process.h>
 #include <stdlib.h>
+int min=0;
+int max=0;
 struct node
 {
     node *left;
@@ -181,7 +183,8 @@ void preorder(node *p)
 {
     if (p != NULL)
     {
-        printf("\t%d", p->info);
+        // printf("\t%d", p->info);
+        printf("\t%d", (p->info%2==0)?p->info:0);
         preorder(p->left);
         preorder(p->right);
     }
