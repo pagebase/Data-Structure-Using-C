@@ -5,6 +5,7 @@ void insVertex();
 void searchVertex();
 void insEdge();
 void findAdjVertex();
+void displayGraph();
 
 struct edge
 {
@@ -51,6 +52,9 @@ int main()
             break;
         case 5:
             findAdjVertex();
+            break;
+        case 6:
+            displayGraph();
             break;
         case 7:
             exit(0);
@@ -218,5 +222,25 @@ void findAdjVertex()
     {
         printf("Vertex not found!\n");
         printf("----------------------------------------------------------------------------------------------------\n");
+    }
+}
+void displayGraph()
+{
+    edge *e1;
+    vertex *v1;
+    v1 = start;
+    while (v1 != NULL)
+    {
+        printf("%d", v1->data);
+        e1 = v1->adj;
+        while (e1 != NULL)
+        {
+            printf("--->%d", e1->dest);
+            e1 = e1->right;
+        }
+        printf("\n");
+        printf("----------------------------------------------------------------------------------------------------\n");
+
+        v1 = v1->next;
     }
 }
