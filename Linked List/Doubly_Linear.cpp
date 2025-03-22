@@ -227,6 +227,7 @@ int remBet(int after)
                 free(temp);
                 return remVal;
             }
+		p=p->next;
         }
     }
 }

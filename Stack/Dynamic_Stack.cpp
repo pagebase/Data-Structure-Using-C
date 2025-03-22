@@ -5,7 +5,7 @@
 struct	node
 {
    int  	info;
-   node	*next;
+   node	*next;F
 }*list;
    node*   create();
    void    isempty();
