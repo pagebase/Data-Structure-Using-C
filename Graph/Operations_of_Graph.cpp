@@ -11,10 +11,11 @@ void searchVertex();
 void insEdge();
 void findAdjVertex();
 void displayGraph();
-
+struct vertex;
 struct edge
 {
-    int dest;
+    // int dest;
+    vertex *adjEdge;
     edge *right;
 };
 
@@ -27,7 +28,6 @@ struct vertex
 
 int main()
 {
-    int insVal;
     int choice;
     while (true)
     {
@@ -181,7 +181,7 @@ void insEdge()
     if (count1 && count2)
     {
         e = (edge *)malloc(sizeof(edge));
-        e->dest = destVertex;
+        e->adjEdge = p2;
         e->right = NULL;
         if (p1->adj == NULL)
         {
@@ -230,7 +230,7 @@ void findAdjVertex()
         travel = temp->adj;
         while (travel != NULL)
         {
-            printf("%d\t", travel->dest);
+            printf("%d\t", travel->adjEdge->data);
 
             travel = travel->right;
         }
@@ -247,6 +247,7 @@ void displayGraph()
 {
     edge *e1;
     vertex *v1;
+    vertex *temp;
     v1 = start;
     while (v1 != NULL)
     {
@@ -254,7 +255,8 @@ void displayGraph()
         e1 = v1->adj;
         while (e1 != NULL)
         {
-            printf("--->%d", e1->dest);
+            // temp=e1->adjEdge;
+            printf("--->%d", e1->adjEdge->data);
             e1 = e1->right;
         }
         printf("\n");
