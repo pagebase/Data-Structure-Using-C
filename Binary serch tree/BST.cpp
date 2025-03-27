@@ -46,7 +46,7 @@ int main()
             break;
         case 5:
             a = count_leaf(root);
-            printf("\nTotal Leaf=%d", a);
+            printf("\nTotal Leaf nodes=%d", a);
             break;
         case 6:
             a = count_total(root);
