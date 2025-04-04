@@ -8,9 +8,9 @@ struct stack
     int top;
 };
 
-void create(stack*);
-void push(stack*, int);
-int pop(stack*);
+void create(stack *);
+void push(stack *, int);
+int pop(stack *);
 
 int main()
 {

@@ -1,324 +1,324 @@
-//Title: Doubly Linear Linked List
-//Date: 9 Sep 2024
-#include<stdio.h>
-#include<conio.h>
-//#include<process.h>
-//#include<alloc.h>
-#include<stdlib.h>//Latest malloc function header file
-//structure section. It is Global section.
+// Title: Doubly Linear Linked List
+// Date: 9 Sep 2024
+#include <stdio.h>
+#include <conio.h>
+// #include<process.h>
+// #include<alloc.h>
+#include <stdlib.h> //Latest malloc function header file
+// structure section. It is Global section.
 struct node
 {
     node *previous;
     int info;
     node *next;
-}*list;
-//function prototype.
-node* create();//create node.
-void insBeg(int);//Insert at beginning.
-void insEnd(int);//Insert at ending.
-void insBet(int,int);//Insert at particular place or in between.
-int remBeg();//Remove beginning.
-int remEnd();//Remove ending node.
-int remBet(int);//Remove node from in between.
-void reverse();//Reverse the Node.
-void display();//Display data from each node.
-void search(int);//Search particular Node.
-void count();//Coount how many Node exists.
-//Main section
+} *list;
+// function prototype.
+node *create();        // create node.
+void insBeg(int);      // Insert at beginning.
+void insEnd(int);      // Insert at ending.
+void insBet(int, int); // Insert at particular place or in between.
+int remBeg();          // Remove beginning.
+int remEnd();          // Remove ending node.
+int remBet(int);       // Remove node from in between.
+void reverse();        // Reverse the Node.
+void display();        // Display data from each node.
+void search(int);      // Search particular Node.
+void count();          // Coount how many Node exists.
+// Main section
 int main()
 {
-    int choice,insVal,after,remVal,searchVal;
-    //clrscr();
+    int choice, insVal, after, remVal, searchVal;
+    // clrscr();
     printf("Doubly Linear Code");
     do
     {
-	    printf("\n1. Insert at Beginning\n");
-	    printf("\n2. Insert at Ending\n");
-	    printf("\n3. Insert Between\n");
-	    printf("\n4. Remove Beginning\n");
-	    printf("\n5. Remove ending\n");
-	    printf("\n6. Remove Between\n");
-	    printf("\n7. Reverse Nodes\n");
-	    printf("\n8. Display\n");
-	    printf("\n9. Search\n");
-	    printf("\n10. Count\n");
-	    printf("\n11: Exit\n");
-	    printf("Enter Your Choice: ");
-	    scanf("%d",&choice);
-	    switch(choice)
-	        {
-	            case 1:
-		            printf("Enter Insert Value: ");
-		            scanf("%d",&insVal);
-		            insBeg(insVal);
-		            break;
-	            case 2:
-		            printf("Enter Insert Value: ");
-		            scanf("%d",&insVal);
-		            insEnd(insVal);
-		            break;
-	            case 3:
-		            printf("Aftre which node?: ");
-		            scanf("%d",&after);
-		            printf("Enter Insert Value: ");
-		            scanf("%d",&insVal);
-		            insBet(after,insVal);
-		            break;
-	            case 4:
-		            remVal=remBeg();
-		            printf("Removed Value is: %d",remVal);
-		            break;
-	            case 5:
-		            remVal=remEnd();
-		            printf("Removed Value is: %d",remVal);
-		            break;
-	            case 6:
-		            printf("After which Node?: ");
-		            scanf("%d",&after);
-		        	remVal=remBet(after);
-		            printf("Removed Value is: %d",remVal);
-		            break;
-	            case 7:
-		            reverse();
-		            break;
-	            case 8:
-	            	display();
-                    break;
-                case 9:
-                    printf("Enter Search Value: ");
-                    scanf("%d",&searchVal);
-		            search(searchVal);
-                    break;
-                case 10:
-                    count();
-                    break;
-                case 11:
-                    exit(10);
-                default:
-                    printf("Oops! Invalid input");
-                    break;
+        printf("\n1. Insert at Beginning\n");
+        printf("\n2. Insert at Ending\n");
+        printf("\n3. Insert Between\n");
+        printf("\n4. Remove Beginning\n");
+        printf("\n5. Remove ending\n");
+        printf("\n6. Remove Between\n");
+        printf("\n7. Reverse Nodes\n");
+        printf("\n8. Display\n");
+        printf("\n9. Search\n");
+        printf("\n10. Count\n");
+        printf("\n11: Exit\n");
+        printf("Enter Your Choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("Enter Insert Value: ");
+            scanf("%d", &insVal);
+            insBeg(insVal);
+            break;
+        case 2:
+            printf("Enter Insert Value: ");
+            scanf("%d", &insVal);
+            insEnd(insVal);
+            break;
+        case 3:
+            printf("Aftre which node?: ");
+            scanf("%d", &after);
+            printf("Enter Insert Value: ");
+            scanf("%d", &insVal);
+            insBet(after, insVal);
+            break;
+        case 4:
+            remVal = remBeg();
+            printf("Removed Value is: %d", remVal);
+            break;
+        case 5:
+            remVal = remEnd();
+            printf("Removed Value is: %d", remVal);
+            break;
+        case 6:
+            printf("After which Node?: ");
+            scanf("%d", &after);
+            remVal = remBet(after);
+            printf("Removed Value is: %d", remVal);
+            break;
+        case 7:
+            reverse();
+            break;
+        case 8:
+            display();
+            break;
+        case 9:
+            printf("Enter Search Value: ");
+            scanf("%d", &searchVal);
+            search(searchVal);
+            break;
+        case 10:
+            count();
+            break;
+        case 11:
+            exit(10);
+        default:
+            printf("Oops! Invalid input");
+            break;
         }
-    }while(choice!=11);
-    //getch();
+    } while (choice != 11);
+    // getch();
     return 0;
-}//Main function end
-//Function definition section
-//create function
-node* create()
+} // Main function end
+// Function definition section
+// create function
+node *create()
 {
     node *p;
-    p=(node*)malloc(sizeof(node));
+    p = (node *)malloc(sizeof(node));
     return p;
 }
-//Insert beginning function
+// Insert beginning function
 void insBeg(int insVal)
 {
-    node *p,*q;
-    p=list;
-    if(p==NULL)
+    node *p, *q;
+    p = list;
+    if (p == NULL)
     {
-	    p=create();
-	    p->previous=NULL;
-	    p->info=insVal;
-	    p->next=NULL;
-	    list=p;
+        p = create();
+        p->previous = NULL;
+        p->info = insVal;
+        p->next = NULL;
+        list = p;
     }
     else
     {
-	    q=create();
-         q->previous=NULL;
-         q->info=insVal;
-         q->next=p;
-         p->previous=q;
-         list=q;
+        q = create();
+        q->previous = NULL;
+        q->info = insVal;
+        q->next = p;
+        p->previous = q;
+        list = q;
     }
 }
-void insBet(int after,int insVal)
+void insBet(int after, int insVal)
 {
-    node *p,*q;
-    p=list;
-    if(p==NULL || (p->previous && p->next==NULL))
+    node *p, *q;
+    p = list;
+    if (p == NULL || (p->previous && p->next == NULL))
         printf("Insert between is Not possible");
     else
     {
-        while(p->next!=NULL)
+        while (p->next != NULL)
         {
-            if(p->info==after)
+            if (p->info == after)
             {
-                q=create();
-                q->previous=p;
-                q->info=insVal;
-                q->next=p->next;
-                p->next->previous=q;
-                p->next=q;
+                q = create();
+                q->previous = p;
+                q->info = insVal;
+                q->next = p->next;
+                p->next->previous = q;
+                p->next = q;
             }
-            p=p->next;
+            p = p->next;
         }
     }
 }
-//Insert at ending
+// Insert at ending
 void insEnd(int insVal)
 {
-    node *p,*q;
-    p=list;
-    if(p==NULL)
+    node *p, *q;
+    p = list;
+    if (p == NULL)
     {
-        p=create();
-        p->previous=NULL;
-        p->info=insVal;
-        p->next=NULL;
-        list=p;
+        p = create();
+        p->previous = NULL;
+        p->info = insVal;
+        p->next = NULL;
+        list = p;
     }
     else
     {
-        while(p->next!=NULL)
-            p=p->next;
-        q=create();
-        q->previous=p;
-        q->info=insVal;
-        q->next=NULL;
-        p->next=q;
+        while (p->next != NULL)
+            p = p->next;
+        q = create();
+        q->previous = p;
+        q->info = insVal;
+        q->next = NULL;
+        p->next = q;
     }
 }
-//Remove from Beginning
+// Remove from Beginning
 int remBeg()
 {
     node *p;
     int remVal;
-    p=list;
-    if(p==NULL)
+    p = list;
+    if (p == NULL)
         printf("LL is Empty");
-    else if(p->previous==NULL && p->next==NULL)
+    else if (p->previous == NULL && p->next == NULL)
     {
-        remVal=p->info;
-        list=NULL;
+        remVal = p->info;
+        list = NULL;
         free(p);
         return remVal;
     }
     else
     {
-        remVal=p->info;
-        p->next->previous=NULL;
-        list=p->next;
+        remVal = p->info;
+        p->next->previous = NULL;
+        list = p->next;
         free(p);
         return remVal;
     }
 }
-//Remove between
+// Remove between
 int remBet(int after)
 {
     int remVal;
-    node *p,*temp;
-    p=list;
-    if(p==NULL)
+    node *p, *temp;
+    p = list;
+    if (p == NULL)
     {
         printf("LL is Empty");
     }
-    else if(p->previous==NULL && p->next==NULL || (p->previous==NULL && p->next->next==NULL))
+    else if (p->previous == NULL && p->next == NULL || (p->previous == NULL && p->next->next == NULL))
     {
         printf("Remove between not possible");
     }
     else
     {
-        while(p!=NULL)
+        while (p != NULL)
         {
-            if(p->info==after)
+            if (p->info == after)
             {
-                temp=p->next;
-                remVal=temp->info;
-                temp->next->previous=p;
-                p->next=temp->next;
+                temp = p->next;
+                remVal = temp->info;
+                temp->next->previous = p;
+                p->next = temp->next;
                 free(temp);
                 return remVal;
             }
-            p=p->next;
+            p = p->next;
         }
     }
 }
-//Remove ending
+// Remove ending
 int remEnd()
 {
     int remVal;
-    node *p,*temp;
-    p=list;
-    if(p==NULL)
+    node *p, *temp;
+    p = list;
+    if (p == NULL)
         printf("LL is Empty");
-    else if(p->previous==NULL && p->next==NULL)
+    else if (p->previous == NULL && p->next == NULL)
     {
-        remVal=p->info;
+        remVal = p->info;
         free(p);
-        list=NULL;
+        list = NULL;
         return remVal;
     }
     else
     {
-        while(p->next->next!=NULL)
+        while (p->next->next != NULL)
         {
-            p=p->next;
+            p = p->next;
         }
-        temp=p->next;
-        remVal=temp->info;
-        p->next=NULL;
+        temp = p->next;
+        remVal = temp->info;
+        p->next = NULL;
         free(temp);
         return remVal;
     }
 }
-//Search function
+// Search function
 void search(int searchVal)
 {
-    int found=0;
+    int found = 0;
     node *p;
-    p=list;
-    while(p!=NULL)
+    p = list;
+    while (p != NULL)
     {
-        if(p->info==searchVal)
+        if (p->info == searchVal)
         {
             found++;
-            //break;
+            // break;
         }
-        p=p->next;
+        p = p->next;
     }
-    if(found>=2)
-        printf("\n[%d] times occured",found);
+    if (found >= 2)
+        printf("\n[%d] times occured", found);
     else
-        printf("\n[%d] times occured",found);
+        printf("\n[%d] times occured", found);
 }
-//Count function
+// Count function
 void count()
 {
-    int count=0;
+    int count = 0;
     node *p;
-    p=list;
-    while(p!=NULL)
+    p = list;
+    while (p != NULL)
     {
         count++;
-        p=p->next;
+        p = p->next;
     }
-    printf("Total Node is: %d",count);
+    printf("Total Node is: %d", count);
 }
-//Display function
+// Display function
 void display()
 {
     node *p;
-    p=list;
-    while(p!=NULL)
+    p = list;
+    while (p != NULL)
     {
-        printf("\t%d",p->info);
-        p=p->next;
+        printf("\t%d", p->info);
+        p = p->next;
     }
 }
-//Reverse Node
+// Reverse Node
 void reverse()
 {
-    node *t1,*t2,*t3=NULL;
-    t1=list;
-    while(t1!=NULL)
+    node *t1, *t2, *t3 = NULL;
+    t1 = list;
+    while (t1 != NULL)
     {
-        t2=t1->next;
-        t1->next=t3;
-        t1->previous=t2;
-        t3=t1;
-	t1=t2;
+        t2 = t1->next;
+        t1->next = t3;
+        t1->previous = t2;
+        t3 = t1;
+        t1 = t2;
     }
-    list=t3;
+    list = t3;
 }

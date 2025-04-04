@@ -73,7 +73,7 @@ void insert(Queue *q, int ins_Element, int ins_Priority)
 
 int remove(Queue *q)
 {
-    int m, pos = 0, z, i, j,y;
+    int m, pos = 0, z, i, j, y;
     if (q->front == q->rear)
     {
         printf("\n\tPriority Queue Underflows...");
@@ -101,7 +101,6 @@ int remove(Queue *q)
         return (z);
     }
 }
-
 
 void display(Queue *q)
 {
