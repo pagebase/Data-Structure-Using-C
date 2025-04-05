@@ -32,7 +32,7 @@ int main()
 
     for (int i = 1; i <= vertex; i++)
     {
-        for (int j = 1; j < vertex; j++)
+        for (int j = 1; j < = vertex; j++)
         {
             printf("%d\t", adj[i][j]);
         }
