@@ -12,3 +12,7 @@
 <pre> ```language function hello() { console.log("Hello, world!"); } ``` </pre>
 
 > Gretaer than
+>
+> - [x] Done task
+- [ ] Pending task
+
