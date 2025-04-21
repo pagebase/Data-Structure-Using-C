@@ -9,7 +9,7 @@
 
 
 
-<pre> ```language function hello() { console.log("Hello, world!"); } ``` </pre>
+<pre> language function hello() { console.log("Hello, world!"); }  </pre>
 
 > Gretaer than
 >
