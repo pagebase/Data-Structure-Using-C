@@ -13,6 +13,6 @@
 
 > Gretaer than
 
-- [x] Done task
-- [ ] Pending task
+[x] Done task
+ [ ] Pending task
 
