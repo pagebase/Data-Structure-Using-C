@@ -9,4 +9,4 @@
 # Delete remote branch
 `git push origin --delete branch-name`
 # Delete local branch
-`git branch -D branch-name`
+> `git branch -D branch-name`
