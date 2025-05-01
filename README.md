@@ -13,4 +13,4 @@
 ---
 # Merge branch
 > 1. Switch to the branch you want to merge into
->> 
+>> hd
