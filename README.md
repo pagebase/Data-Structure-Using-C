@@ -2,3 +2,5 @@
 `git checkout -b Patch1`
 # Push branch onto remote
 `git push -u origin Branch_Name`
+# Delete local branch
+`git branch -D branch-name`
