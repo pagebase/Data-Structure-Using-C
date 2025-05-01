@@ -6,3 +6,7 @@
 `git branch -D branch-name`
 # Delete remote branch
 `git push origin --delete branch-name`
+# List local branch
+`git branch`
+# List remote branch
+`git branch -r`
