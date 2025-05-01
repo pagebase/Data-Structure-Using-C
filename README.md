@@ -4,3 +4,5 @@
 `git push -u origin Branch_Name`
 # Delete local branch
 `git branch -D branch-name`
+# Delete remote branch
+`git push origin --delete branch-name`
