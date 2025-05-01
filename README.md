@@ -6,11 +6,6 @@
 `git branch`
 # List remote branch
 `git branch -r`
-# Delete remote branch
-`git push origin --delete branch-name`
-# Delete local branch
-`git branch -D branch-name`
----
 # Merge branch
 > 1. Switch to the branch you want to merge into
 >> `git checkout main`
@@ -18,3 +13,7 @@
 >> `git merge feature-branch`
 > 3. Push the merged result
 >> `git push origin main`
+# Delete remote branch
+`git push origin --delete branch-name`
+# Delete local branch
+`git branch -D branch-name`
